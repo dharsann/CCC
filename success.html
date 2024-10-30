@@ -1,91 +1,37 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Sent</title>
-    <style>
-        body {
-            font-family: 'SF Pro Text', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            text-align: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 412px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-        }
-        .app-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 4px;
-            background-color: #fef7ff;
-        }
-        .icon img {
-            width: 24px;
-            height: 24px;
-        }
-        .logo {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 8px;
-        }
-        .logo img {
-            width: 41.85px;
-            height: 40px;
-        }
-        .message-icon img {
-            width: 91px;
-            height: 91px;
-            margin: 20px;
-        }
-        .message-title {
-            font: 700 24px 'SF Pro Text', sans-serif;
-            color: #000;
-            margin: 10px 0;
-        }
-        .message-subtitle {
-            font: 400 16px 'SF Pro Text', sans-serif;
-            color: #ececec;
-            margin-bottom: 30px;
-        }
-        .close-button {
-            background: linear-gradient(180deg, rgba(163,119,255,1) 0%, rgba(186,153,255,1) 100%);
-            border: none;
-            color: #fff;
-            font: 600 18px 'SF Pro Text', sans-serif;
-            padding: 18px 100px;
-            border-radius: 1000px;
-            cursor: pointer;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Message Sent</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
-<body>
-    <div class="container">
-        <div class="app-bar">
-            <div class="icon"><img src="https://placeholder.pics/svg/48x48" alt="menu-icon"></div>
-        </div>
-        <div class="logo"><img src="https://placeholder.pics/svg/41.85x40" alt="logo"></div>
-        <div class="message-icon">
-            <img src="https://placeholder.pics/svg/91x67" alt="check-icon">
-        </div>
-        <div class="message-title">Your message has been sent</div>
-        <div class="message-subtitle">Thank you for sharing your thoughts</div>
-        <button class="close-button">Close</button>
+<body class="bg-purple-50 font-roboto">
+  <!-- Navbar -->
+  <nav class="bg-white p-4 flex justify-between items-center shadow-md">
+    <button class="text-2xl">
+      <i class="fas fa-bars"></i>
+    </button>
+    <img alt="Logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/1fMMePVCkNkHlUM0bLJuyOpKHex6okMRaChiwkjFfSLaqjvOB.jpg" width="40"/>
+  </nav>
+  <!-- Section 5 -->
+  <section class="p-6 text-center">
+    <div class="flex justify-center items-center">
+      <div class="bg-purple-200 p-6 rounded-full">
+        <i class="fas fa-check text-4xl text-purple-600"></i>
+      </div>
     </div>
+    <h2 class="text-2xl font-bold mt-4">Your message has been sent</h2>
+    <p class="text-gray-500">Thank you for sharing your thoughts</p>
+    <button class="bg-purple-600 text-white py-2 px-4 rounded-full mt-6">Close</button>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-white p-4 flex justify-center space-x-4 shadow-md">
+    <a class="text-gray-500" href="#"><i class="fab fa-instagram"></i></a>
+    <a class="text-gray-500" href="#"><i class="fab fa-facebook"></i></a>
+    <a class="text-gray-500" href="#"><i class="fab fa-twitter"></i></a>
+    <a class="text-gray-500" href="#"><i class="fab fa-youtube"></i></a>
+  </footer>
 </body>
 </html>
