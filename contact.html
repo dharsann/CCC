@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .container {
+            width: 100%;
+            max-width: 412px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .app-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 4px;
+            background-color: #fef7ff;
+        }
+        .icon img {
+            width: 24px;
+            height: 24px;
+        }
+        .headline {
+            font: 400 22px Roboto;
+            color: #1d1b20;
+            text-align: center;
+        }
+        .contact-card {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 0 2px #00000040;
+        }
+        .contact-title {
+            font: 500 40px Poppins;
+            color: #000;
+        }
+        .contact-title span {
+            color: #ffcc00;
+        }
+        .sub-title {
+            font: 400 16px Poppins;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .input-container {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .input-container label {
+            font-size: 16px;
+            color: #000;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #000;
+        }
+        .submit-button {
+            background-color: #ffcc00;
+            border: none;
+            color: #fff;
+            font: 500 20px Poppins;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .map-container {
+            margin-top: 20px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            height: 203px;
+        }
+        .map-container img {
+            width: 100%;
+            height: 100%;
+        }
+        .location-info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .location-info h4 {
+            font: 600 12px Poppins;
+            color: #de6e4b;
+            margin: 0;
+        }
+        .location-info p {
+            font: 400 11px Poppins;
+            color: #000;
+            margin: 0;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-bar">
+            <div class="icon"><img src="https://placeholder.pics/svg/48x48" alt="menu-icon"></div>
+            <div class="headline">Headline</div>
+            <div class="icon"><img src="https://placeholder.pics/svg/48x48" alt="profile-icon"></div>
+        </div>
+        <div class="contact-card">
+            <h1 class="contact-title">Contact <span>us</span></h1>
+            <p class="sub-title">Let’s get in touch!</p>
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="text" id="email">
+            </div>
+            <div class="input-container">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="input-container">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone">
+            </div>
+            <button class="submit-button">Submit</button>
+            <div class="map-container">
+                <img src="https://placeholder.pics/svg/340x203" alt="map">
+                <div class="location-info">
+                    <h4>Company name</h4>
+                    <p>315 W 36th St.</p>
+                    <p>NY 10018</p>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <img src="https://placeholder.pics/svg/20x20" alt="instagram">
+            <img src="https://placeholder.pics/svg/20x20" alt="twitter">
+            <img src="https://placeholder.pics/svg/20x20" alt="facebook">
+            <img src="https://placeholder.pics/svg/20x20" alt="linkedin">
+        </div>
+    </div>
+</body>
+</html>

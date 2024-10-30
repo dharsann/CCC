@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent</title>
+    <style>
+        body {
+            font-family: 'SF Pro Text', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 412px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        .app-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 4px;
+            background-color: #fef7ff;
+        }
+        .icon img {
+            width: 24px;
+            height: 24px;
+        }
+        .logo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 8px;
+        }
+        .logo img {
+            width: 41.85px;
+            height: 40px;
+        }
+        .message-icon img {
+            width: 91px;
+            height: 91px;
+            margin: 20px;
+        }
+        .message-title {
+            font: 700 24px 'SF Pro Text', sans-serif;
+            color: #000;
+            margin: 10px 0;
+        }
+        .message-subtitle {
+            font: 400 16px 'SF Pro Text', sans-serif;
+            color: #ececec;
+            margin-bottom: 30px;
+        }
+        .close-button {
+            background: linear-gradient(180deg, rgba(163,119,255,1) 0%, rgba(186,153,255,1) 100%);
+            border: none;
+            color: #fff;
+            font: 600 18px 'SF Pro Text', sans-serif;
+            padding: 18px 100px;
+            border-radius: 1000px;
+            cursor: pointer;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-bar">
+            <div class="icon"><img src="https://placeholder.pics/svg/48x48" alt="menu-icon"></div>
+        </div>
+        <div class="logo"><img src="https://placeholder.pics/svg/41.85x40" alt="logo"></div>
+        <div class="message-icon">
+            <img src="https://placeholder.pics/svg/91x67" alt="check-icon">
+        </div>
+        <div class="message-title">Your message has been sent</div>
+        <div class="message-subtitle">Thank you for sharing your thoughts</div>
+        <button class="close-button">Close</button>
+    </div>
+</body>
+</html>
