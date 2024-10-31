@@ -87,7 +87,11 @@
     function handleSubmit(event) {
       event.preventDefault(); // Prevent default form submission
       const form = event.target;
-  
+      const submitButton = document.getElementById('submit-button');
+
+      // Disable the submit button
+      submitButton.disabled = true;
+
       // Submit the form via AJAX to avoid page reload
       fetch(form.action, {
         method: 'POST',
@@ -104,6 +108,9 @@
       .catch(error => {
         console.error('Error submitting form:', error);
         alert('There was an error submitting the form. Please try again.');
+        
+        // Re-enable the submit button if there is an error
+        submitButton.disabled = false;
       });
     }
   </script>
