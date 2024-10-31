@@ -48,32 +48,34 @@
   </nav>
 
   <!-- Contact Us Section -->
-  <section class="p-6">
-    <h2 class="text-2xl font-bold text-center">Contact <span class="text-yellow-500">Us</span></h2>
-    <p class="text-center text-gray-500">Let's get in touch!</p>
-  
-    <form action="https://script.google.com/macros/s/AKfycbxV2vKyW9IggeVPaa5vs7hxCeQScG9lH4Vyn35j7xJ_JmtrXfYMShL1A_1rNskZ54J8/exec" method="post" target="dummyframe" onsubmit="handleSubmit(event)" class="mt-6 space-y-4">
+  <!-- Contact Us Section -->
+<section class="p-6">
+  <h2 class="text-2xl font-bold text-center">Contact <span class="text-yellow-500">Us</span></h2>
+  <p class="text-center text-gray-500">Let's get in touch!</p>
+
+  <form action="https://script.google.com/macros/s/AKfycbxV2vKyW9IggeVPaa5vs7hxCeQScG9lH4Vyn35j7xJ_JmtrXfYMShL1A_1rNskZ54J8/exec" method="post" target="dummyframe" onsubmit="handleSubmit(event)" class="mt-6 space-y-4">
       <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" 
              placeholder="Name" type="text" name="Name" required/>
       <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" 
              placeholder="Email" type="email" name="Email" required/>
       <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" 
              placeholder="Phone" type="tel" name="Phone" required/>
-      <button class="w-full bg-yellow-500 text-white py-2 rounded-full" type="submit">
-        Submit
+      <button id="submit-button" class="w-full bg-yellow-500 text-white py-2 rounded-full" type="submit">
+          Submit
       </button>
-    </form>
-  
-    <!-- Hidden iframe for submission -->
-    <iframe name="dummyframe" style="display:none;"></iframe>
+  </form>
 
-    <!-- Map Section with Adjusted Padding and Margin -->
-    <div class="mt-8" style="position: relative; width: 100%; padding-bottom: 50%;">
-      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1VnYC6EugmolDY9RjsZ77TeXstyj0288&q=Surya+Apartments,+Sri+Lakshmi+Nagar,+Ganapathy,+Coimbatore,+Tamil+Nadu+641006&center=11.0408418,76.9780849&zoom=17" 
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-              allowfullscreen></iframe>
-    </div>
-  </section>
+  <!-- Hidden iframe for submission -->
+  <iframe name="dummyframe" style="display:none;"></iframe>
+
+  <!-- Gap between button and map -->
+  <div class="mt-6"></div> <!-- Creates a gap -->
+
+  <!-- Map Section with Adjusted Padding and Margin -->
+  <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 40%;">
+      <iframe src="https://drive.google.com/file/d/1uL1QfU1pZIxQpTyiKhy5hGcIPrmeqP30/preview" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen></iframe>
+  </div>
+</section>
   
   <!-- Footer -->
   <footer class="bg-white p-4 flex justify-center space-x-4 shadow-md">
@@ -87,9 +89,9 @@
     function handleSubmit(event) {
       event.preventDefault(); // Prevent default form submission
       const form = event.target;
-      const submitButton = document.getElementById('submit-button');
 
       // Disable the submit button
+      const submitButton = document.getElementById('submit-button');
       submitButton.disabled = true;
 
       // Submit the form via AJAX to avoid page reload
@@ -114,7 +116,7 @@
       });
     }
   </script>
-  
+
   <script>
     // JavaScript to toggle the menu visibility
     const menuButton = document.getElementById('menu-button');
