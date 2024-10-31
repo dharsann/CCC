@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -6,34 +7,74 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Optional smooth transition */
+    .menu-hidden {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .menu-visible {
+      max-height: 300px; /* Adjust based on the content size */
+    }
+  </style>
 </head>
 <body class="bg-purple-50 font-roboto">
   <!-- Navbar -->
-  <nav class="bg-white p-4 flex justify-between items-center shadow-md">
-    <button class="text-2xl">
+  <nav class="bg-white p-4 flex justify-between items-center shadow-md relative">
+    <!-- Menu Button -->
+    <button id="menu-button" class="text-2xl focus:outline-none">
       <i class="fas fa-bars"></i>
     </button>
-    <img alt="Logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/1fMMePVCkNkHlUM0bLJuyOpKHex6okMRaChiwkjFfSLaqjvOB.jpg" width="40"/>
+
+    <!-- Logo -->
+    <div style="position: relative; width: 40px; height: 40px; border-radius: 20px; overflow: hidden;">
+      <iframe 
+        src="https://drive.google.com/file/d/1gOrV95s1OINqEBH9VujG9VGrryi0YJmY/preview" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <!-- Hidden Menu Links -->
+    <div id="menu" class="absolute top-16 left-0 w-full bg-white shadow-md menu-hidden">
+      <ul class="flex flex-col items-center space-y-4 py-4">
+        <li><a href="index.html" class="text-gray-700 hover:text-purple-600">Home</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-purple-600">About Us</a></li>
+        <li><a href="services.html" class="text-gray-700 hover:text-purple-600">Services</a></li>
+        <li><a href="contact.html" class="text-gray-700 hover:text-purple-600">Contact Us</a></li>
+      </ul>
+    </div>
   </nav>
-  <!-- Section 2 -->
+
+  <!-- Contact Us Section -->
   <section class="p-6">
-    <h2 class="text-2xl font-bold text-center">Contact <span class="text-yellow-500">us</span></h2>
+    <h2 class="text-2xl font-bold text-center">Contact <span class="text-yellow-500">Us</span></h2>
     <p class="text-center text-gray-500">Let's get in touch!</p>
-    <form class="mt-6 space-y-4">
-      <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" placeholder="Email" type="email"/>
-      <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" placeholder="Name" type="text"/>
-      <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" placeholder="Phone" type="tel"/>
-      <button class="w-full bg-yellow-500 text-white py-2 rounded-full" type="submit">Submit</button>
+  
+    <form action="https://script.google.com/macros/s/AKfycbxV2vKyW9IggeVPaa5vs7hxCeQScG9lH4Vyn35j7xJ_JmtrXfYMShL1A_1rNskZ54J8/exec" method="post" target="dummyframe" onsubmit="handleSubmit(event)" class="mt-6 space-y-4">
+      <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" 
+             placeholder="Name" type="text" name="Name" required/>
+      <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" 
+             placeholder="Email" type="email" name="Email" required/>
+      <input class="w-full border-b-2 border-gray-300 focus:border-yellow-500 outline-none py-2" 
+             placeholder="Phone" type="tel" name="Phone" required/>
+      <button class="w-full bg-yellow-500 text-white py-2 rounded-full" type="submit">
+        Submit
+      </button>
     </form>
-    <div class="mt-6">
-      <img alt="Map" class="w-full rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/tk5a9knQYDaqElvHOsG82toKIumXlge5fxNR0a9eyOHP1xXnA.jpg" width="300"/>
-      <p class="text-center mt-2">
-        Company name<br/>
-        315 W 36th St.<br/>
-        NY 10018
-      </p>
+  
+    <!-- Hidden iframe for submission -->
+    <iframe name="dummyframe" style="display:none;"></iframe>
+
+    <!-- Map Section with Adjusted Padding and Margin -->
+    <div class="mt-8" style="position: relative; width: 100%; padding-bottom: 50%;">
+      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1VnYC6EugmolDY9RjsZ77TeXstyj0288&q=Surya+Apartments,+Sri+Lakshmi+Nagar,+Ganapathy,+Coimbatore,+Tamil+Nadu+641006&center=11.0408418,76.9780849&zoom=17" 
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+              allowfullscreen></iframe>
     </div>
   </section>
+  
   <!-- Footer -->
   <footer class="bg-white p-4 flex justify-center space-x-4 shadow-md">
     <a class="text-gray-500" href="#"><i class="fab fa-instagram"></i></a>
@@ -41,5 +82,41 @@
     <a class="text-gray-500" href="#"><i class="fab fa-twitter"></i></a>
     <a class="text-gray-500" href="#"><i class="fab fa-youtube"></i></a>
   </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent default form submission
+      const form = event.target;
+  
+      // Submit the form via AJAX to avoid page reload
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => response.text())
+      .then(result => {
+        // Redirect to success.html if submission is successful
+        window.location.href = 'success.html';
+        
+        // Clear the form fields
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('There was an error submitting the form. Please try again.');
+      });
+    }
+  </script>
+  
+  <script>
+    // JavaScript to toggle the menu visibility
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+      menu.classList.toggle('menu-visible');
+      menu.classList.toggle('menu-hidden');
+    });
+  </script>
 </body>
 </html>

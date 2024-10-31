@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -6,36 +7,76 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .menu-hidden {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .menu-visible {
+      max-height: 300px;
+    }
+  </style>
 </head>
 <body class="bg-purple-50 font-roboto">
   <!-- Navbar -->
-  <nav class="bg-white p-4 flex justify-between items-center shadow-md">
-    <button class="text-2xl">
+  <nav class="bg-white p-4 flex justify-between items-center shadow-md relative">
+    <button id="menu-button" class="text-2xl focus:outline-none">
       <i class="fas fa-bars"></i>
     </button>
-    <img alt="Logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/1fMMePVCkNkHlUM0bLJuyOpKHex6okMRaChiwkjFfSLaqjvOB.jpg" width="40"/>
+    <!-- Logo -->
+    <div style="position: relative; width: 40px; height: 40px; border-radius: 20px; overflow: hidden;">
+      <iframe 
+        src="https://drive.google.com/file/d/1gOrV95s1OINqEBH9VujG9VGrryi0YJmY/preview" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    <!-- Hidden Navigation Menu -->
+    <div id="menu" class="absolute top-16 left-0 w-full bg-white shadow-md menu-hidden">
+      <ul class="flex flex-col items-center space-y-4 py-4">
+        <li><a href="index.html" class="text-gray-700 hover:text-purple-600">Home</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-purple-600">About Us</a></li>
+        <li><a href="services.html" class="text-gray-700 hover:text-purple-600">Services</a></li>
+        <li><a href="contact.html" class="text-gray-700 hover:text-purple-600">Contact Us</a></li>
+      </ul>
+    </div>
   </nav>
-  <!-- Section 3 -->
+
+  <!-- About Us Section -->
   <section class="p-6">
-    <h2 class="text-2xl font-bold text-center">About <span class="text-yellow-500">us</span></h2>
-    <p class="text-center text-gray-500">
-      Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al
+    <h2 class="text-2xl font-bold text-center">About <span class="text-yellow-500">Us</span></h2>
+    <p class="text-center text-gray-500 mt-4">
+      At Classic Cuisine Caterers, we are dedicated to turning your visions into reality. With over 25 years of experience in the event planning industry, we specialize in creating unforgettable experiences tailored to your specific needs. Our passion for excellence and our commitment to customer satisfaction drive us to deliver events that exceed expectations.
     </p>
-    <h3 class="text-xl font-bold text-center mt-6">Founders</h3>
+    <p class="text-center text-gray-500 mt-4">
+      Our talented team of event planners combines creativity, expertise, and meticulous attention to detail. We take pride in managing every aspect of your event, ensuring that each moment is executed flawlessly—from the initial concept to the final execution. Whether it's a corporate gathering, a wedding, or a special celebration, we are here to make your event a success.
+    </p>
+
+    <h3 class="text-xl font-bold text-center mt-6">Our Founders</h3>
     <div class="flex justify-center items-center mt-4 space-x-4">
-      <div class="text-center">
-        <img alt="John Carvan" class="w-20 h-20 rounded-full" height="80" src="https://storage.googleapis.com/a1aa/image/suDThI9s8sIPMJzwd8alYPMfYpt2MzU06nn0fy7DmsGl64rTA.jpg" width="80"/>
-        <p class="mt-2">John Carvan</p>
+      <div class="relative w-36 h-36 overflow-hidden rounded-full">
+        <iframe src="https://drive.google.com/file/d/1-P-uPG3JqyUMiMHDjqxSeSu5A6hRJ4rU/preview" 
+        class="absolute w-full h-full border-0" 
+        allowfullscreen></iframe>
       </div>
-      <div class="text-center">
-        <img alt="Miss Smith Ellen" class="w-20 h-20 rounded-full" height="80" src="https://storage.googleapis.com/a1aa/image/wnzIcFteYBVSH6h9L3kXqg8a5Eenk2ybxQMwEuRo19Lr64rTA.jpg" width="80"/>
-        <p class="mt-2">Miss Smith Ellen</p>
+      <div class="relative w-36 h-36 overflow-hidden rounded-full">
+        <iframe src="https://drive.google.com/file/d/1yK7NqEo_sU7ySUXKuyl4HNpscoNSupcR/preview" 
+                class="absolute w-full h-full border-0" 
+                allowfullscreen></iframe>
       </div>
     </div>
+
     <p class="text-center text-gray-500 mt-6">
-      Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al
+      We strive to bring a wealth of knowledge and passion to the industry. Our vision and commitment to quality have shaped our company into a leading event planning service that clients trust and rely on. Together we create memorable experiences and uphold our core values of integrity, innovation, and excellence.
+    </p>
+
+    <h3 class="text-xl font-bold text-center mt-6">Our Mission</h3>
+    <p class="text-center text-gray-500 mt-4">
+      Our mission is to create seamless and memorable events that leave a lasting impression on our clients and their guests. We believe that every event tells a story, and it is our privilege to help you share yours. We are committed to understanding your needs and bringing your vision to life with creativity and precision.
     </p>
   </section>
+
   <!-- Footer -->
   <footer class="bg-white p-4 flex justify-center space-x-4 shadow-md">
     <a class="text-gray-500" href="#"><i class="fab fa-instagram"></i></a>
@@ -43,5 +84,16 @@
     <a class="text-gray-500" href="#"><i class="fab fa-twitter"></i></a>
     <a class="text-gray-500" href="#"><i class="fab fa-youtube"></i></a>
   </footer>
+
+  <script>
+    // Toggle Navbar Menu
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+      menu.classList.toggle('menu-visible');
+      menu.classList.toggle('menu-hidden');
+    });
+  </script>
 </body>
 </html>

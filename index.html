@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -6,33 +7,68 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Optional smooth transition */
+    .menu-hidden {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .menu-visible {
+      max-height: 300px; /* Adjust as needed */
+    }
+  </style>
 </head>
 <body class="bg-purple-50 font-roboto">
   <!-- Navbar -->
   <nav class="bg-white p-4 flex justify-between items-center shadow-md">
-    <button class="text-2xl">
+    <!-- Menu Button -->
+    <button id="menu-button" class="text-2xl focus:outline-none">
       <i class="fas fa-bars"></i>
     </button>
-    <img alt="Logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/1fMMePVCkNkHlUM0bLJuyOpKHex6okMRaChiwkjFfSLaqjvOB.jpg" width="40"/>
+
+    <!-- Logo -->
+    <div style="position: relative; width: 40px; height: 40px; border-radius: 20px; overflow: hidden;">
+      <iframe 
+        src="https://drive.google.com/file/d/1gOrV95s1OINqEBH9VujG9VGrryi0YJmY/preview" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <!-- Hidden Menu Links -->
+    <div id="menu" class="absolute top-16 left-0 w-full bg-white shadow-md menu-hidden">
+      <ul class="flex flex-col items-center space-y-4 py-4">
+        <li><a href="index.html" class="text-gray-700 hover:text-purple-600">Home</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-purple-600">About Us</a></li>
+        <li><a href="services.html" class="text-gray-700 hover:text-purple-600">Services</a></li>
+        <li><a href="contact.html" class="text-gray-700 hover:text-purple-600">Contact Us</a></li>
+      </ul>
+    </div>
   </nav>
+
   <!-- Section 1 -->
   <section class="text-center p-6">
     <div class="flex justify-center items-center space-x-4">
-      <div class="bg-orange-500 w-24 h-24 rounded-full"></div>
-      <img alt="Logo" class="w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/1fMMePVCkNkHlUM0bLJuyOpKHex6okMRaChiwkjFfSLaqjvOB.jpg" width="80"/>
+      <div class="bg-orange-500 w-24 h-24 rounded-full"></div>    
       <div class="bg-yellow-500 w-24 h-24 rounded-full"></div>
     </div>
     <p class="mt-6 text-gray-700">
-      Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al
+      With over 25 years of experience in the event planning industry, we are passionate about crafting unforgettable experiences tailored to your vision. Our team combines creativity, expertise, and meticulous attention to detail to bring your dream event to life. Whether it’s a corporate function, wedding, birthday celebration, or a grand gala, we manage every element—large or small—ensuring your event runs seamlessly from start to finish.
     </p>
     <p class="mt-4 text-gray-700">
-      Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al
+      As your comprehensive event planning partner, we take pride in offering a full spectrum of services to meet your every need. From concept development and venue selection to décor, catering, entertainment, and on-site coordination, we handle it all with professionalism and a personal touch. Our mission is to create stress-free, memorable events where you can simply enjoy the occasion while we take care of the details. Trust us to make your event as unique and remarkable as you are.
     </p>
     <div class="mt-6 space-y-4">
-      <button class="bg-purple-600 text-white py-2 px-4 rounded-full">About us</button>
-      <button class="bg-purple-600 text-white py-2 px-4 rounded-full">Contact us</button>
+      <a href="about.html">
+        <button class="bg-purple-600 text-white py-2 px-4 rounded-full">About us</button>
+      </a>
+      <a href="contact.html">
+        <button class="bg-purple-600 text-white py-2 px-4 rounded-full">Contact us</button>
+      </a>
     </div>
   </section>
+
   <!-- Footer -->
   <footer class="bg-white p-4 flex justify-center space-x-4 shadow-md">
     <a class="text-gray-500" href="#"><i class="fab fa-instagram"></i></a>
@@ -40,5 +76,16 @@
     <a class="text-gray-500" href="#"><i class="fab fa-twitter"></i></a>
     <a class="text-gray-500" href="#"><i class="fab fa-youtube"></i></a>
   </footer>
+
+  <script>
+    // JavaScript to toggle the menu visibility
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+      menu.classList.toggle('menu-visible');
+      menu.classList.toggle('menu-hidden');
+    });
+  </script>
 </body>
 </html>

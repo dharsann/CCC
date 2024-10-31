@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -6,16 +7,47 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Optional smooth transition */
+    .menu-hidden {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .menu-visible {
+      max-height: 300px; /* Adjust as needed */
+    }
+  </style>
 </head>
 <body class="bg-purple-50 font-roboto">
   <!-- Navbar -->
-  <nav class="bg-white p-4 flex justify-between items-center shadow-md">
-    <button class="text-2xl">
+  <nav class="bg-white p-4 flex justify-between items-center shadow-md relative">
+    <!-- Menu Button -->
+    <button id="menu-button" class="text-2xl focus:outline-none">
       <i class="fas fa-bars"></i>
     </button>
-    <img alt="Logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/1fMMePVCkNkHlUM0bLJuyOpKHex6okMRaChiwkjFfSLaqjvOB.jpg" width="40"/>
+
+    <!-- Logo -->
+    <div style="position: relative; width: 40px; height: 40px; border-radius: 20px; overflow: hidden;">
+      <iframe 
+        src="https://drive.google.com/file/d/1gOrV95s1OINqEBH9VujG9VGrryi0YJmY/preview" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <!-- Hidden Menu Links -->
+    <div id="menu" class="absolute top-16 left-0 w-full bg-white shadow-md menu-hidden">
+      <ul class="flex flex-col items-center space-y-4 py-4">
+        <li><a href="index.html" class="text-gray-700 hover:text-purple-600">Home</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-purple-600">About Us</a></li>
+        <li><a href="services.html" class="text-gray-700 hover:text-purple-600">Services</a></li>
+        <li><a href="contact.html" class="text-gray-700 hover:text-purple-600">Contact Us</a></li>
+      </ul>
+    </div>
   </nav>
-  <!-- Section 5 -->
+
+  <!-- Section: Message Sent -->
   <section class="p-6 text-center">
     <div class="flex justify-center items-center">
       <div class="bg-purple-200 p-6 rounded-full">
@@ -24,8 +56,11 @@
     </div>
     <h2 class="text-2xl font-bold mt-4">Your message has been sent</h2>
     <p class="text-gray-500">Thank you for sharing your thoughts</p>
-    <button class="bg-purple-600 text-white py-2 px-4 rounded-full mt-6">Close</button>
+    <a href="index.html">
+      <button class="bg-purple-600 text-white py-2 px-4 rounded-full mt-6">Close</button>
+    </a>
   </section>
+
   <!-- Footer -->
   <footer class="bg-white p-4 flex justify-center space-x-4 shadow-md">
     <a class="text-gray-500" href="#"><i class="fab fa-instagram"></i></a>
@@ -33,5 +68,16 @@
     <a class="text-gray-500" href="#"><i class="fab fa-twitter"></i></a>
     <a class="text-gray-500" href="#"><i class="fab fa-youtube"></i></a>
   </footer>
+
+  <script>
+    // JavaScript to toggle the menu visibility
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+      menu.classList.toggle('menu-visible');
+      menu.classList.toggle('menu-hidden');
+    });
+  </script>
 </body>
 </html>
